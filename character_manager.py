@@ -37,7 +37,7 @@ def create_character(name, character_class):
     Raises: InvalidCharacterClassError if class is not valid
     """
 # validates class that user requests by returning dictionary
-# of base stats. If invalid, raises InvalidCharacterClassError
+# of base stats. If invalid, raises error
 
     valid_classes = {
         "Warrior": {"health": 120, "strength": 15, "magic": 5},
@@ -88,8 +88,8 @@ def save_character(character, save_directory="data/save_games"):
     Returns: True if successful
     Raises: PermissionError, IOError (let them propagate or handle)
     """
-    # make sure to write all of the character info line 
-    # by line in the file.
+# make sure to write all of the character info line by 
+# line in the file.
 
 
     validate_character_data(character)
@@ -128,8 +128,8 @@ def load_character(character_name, save_directory="data/save_games"):
         SaveFileCorruptedError if file exists but can't be read
         InvalidSaveDataError if data format is wrong
     """
-    # i make sure to have a bunch of errors ready to be 
-    # raised if saving the file goes wrong.
+# i make sure to have a bunch of errors ready to be raised 
+# if saving the file goes wrong.
     filename = f"{character_name}_save.txt"
     filepath = os.path.join(save_directory, filename)
     if not os.path.exists(filepath):
