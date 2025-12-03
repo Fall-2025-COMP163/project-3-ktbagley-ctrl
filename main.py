@@ -2,7 +2,7 @@
 COMP 163 - Project 3: Quest Chronicles
 Main Game Module - Starter Code
 
-Name: [Your Name Here]
+Name: Kayla Bagley
 
 AI Usage: [Document any AI assistance used]
 
@@ -31,7 +31,7 @@ game_running = False
 # ============================================================================
 # MAIN MENU
 # ============================================================================
-
+# brings everything together
 def main_menu():
     """
     Display main menu and get player choice

@@ -4,7 +4,7 @@ Inventory System Module - Starter Code
 
 Name: Kayla Bagley
 
-AI Usage: Needed help to parse through item effect strings and managing the character's inventory list with files, used Google Gemini.
+AI Usage: Needed help to parse through item effect strings and managing the character's inventory list with files, used Google Gemini. I needed help with my equip_weapon section in inventory_sytems because my dictionary didnt have an accurate key, used Google Gemini.
 
 This module handles inventory management, item usage, and equipment.
 """
@@ -22,7 +22,7 @@ MAX_INVENTORY_SIZE = 20
 # ============================================================================
 # INVENTORY MANAGEMENT
 # ============================================================================
-
+# everything related to items. controlling, adding, removing, counting,
 def add_item_to_inventory(character, item_id):
     """
     Add an item to character's inventory
@@ -160,24 +160,24 @@ def equip_weapon(character, item_id, item_data):
     """
 # makes sure character has item. if not, raise error. if 
 # weapon is already equpped reme state bonus.
-    if not has_item(character, item_id):
-        raise ItemNotFoundError(f"Item {item_id} not found in inventory.")
+    if item_id not in character.get("inventory", []):
+        raise ItemNotFoundError("Item not in inventory.")
     if item_data.get("type") != "weapon":
         raise InvalidItemTypeError("Item is not a weapon.")
-    current_id = character.get("equipped_weapon_id")
-    current_bonus = character.get("equipped_weapon_bonus", 0)
-    current_stat = character.get("equipped_weapon_stat")
-    if current_id is not None:
-        apply_stat_effect(character, current_stat, -current_bonus)
-        add_item_to_inventory(character, current_id)
+
     stat_name, value = parse_item_effect(item_data.get("effect", "strength:0"))
-    remove_item_from_inventory(character, item_id)
+
+    current_weapon = character.get("equipped_weapon")
+    if current_weapon is not None:
+        if len(character.get("inventory", [])) >= MAX_INVENTORY_SIZE:
+            raise InventoryFullError("Inventory is full.")
+        character["inventory"].append(current_weapon)
+
+    character["equipped_weapon"] = item_id
+    character["inventory"].remove(item_id)
     apply_stat_effect(character, stat_name, value)
-    character["equipped_weapon_id"] = item_id
-    character["equipped_weapon_bonus"] = value
-    character["equipped_weapon_stat"] = stat_name
-    item_name = item_data.get("name", item_id)
-    return f"Equipped {item_name}."
+
+    return f"Equipped weapon: {item_data.get('name', item_id)}"
 
 def equip_armor(character, item_id, item_data):
     """

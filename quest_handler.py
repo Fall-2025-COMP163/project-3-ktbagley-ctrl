@@ -2,7 +2,7 @@
 COMP 163 - Project 3: Quest Chronicles
 Quest Handler Module - Starter Code
 
-Name: [Your Name Here]
+Name: Kayla Bagley
 
 AI Usage: [Document any AI assistance used]
 
@@ -20,7 +20,7 @@ from custom_exceptions import (
 # ============================================================================
 # QUEST MANAGEMENT
 # ============================================================================
-
+# managing all quests
 import character_manager
 
 

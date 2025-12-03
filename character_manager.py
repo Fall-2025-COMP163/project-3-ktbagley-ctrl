@@ -24,6 +24,8 @@ from custom_exceptions import (
 # module is responsible for creating, saving, loading, 
 # and updating player characters
 
+# creating new characters, loads and saves save files. 
+# as well as raising custom exceptions.
 def create_character(name, character_class):
     """
     Create a new character with stats based on class

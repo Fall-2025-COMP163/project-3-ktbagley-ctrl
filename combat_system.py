@@ -19,6 +19,8 @@ from custom_exceptions import (
 # ============================================================================
 # ENEMY DEFINITIONS
 # ============================================================================
+#the main battle system, handlinig classes, special abilitees, & more.
+
 # doesnt let a dead character start a battle
 from character_manager import is_character_dead
 
