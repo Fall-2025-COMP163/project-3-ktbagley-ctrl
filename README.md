@@ -1,5 +1,40 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wnCpjX4n)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21850385&assignment_repo_type=AssignmentRepo)
+
+# ==================================================
+# Quest Chronicles: The Full RPG Game 
+# By: Kayla Bagley
+# ==================================================
+
+My project is a text-based RPG game that includes character creation, combat, quests, items, shops, and a full game loop. Everything is separated into different modules so each part of the game is easier to manage and test efficiently.
+
+# OFFICIAL OVERVIEW: 
+My game lets you create a character (name and specific class), fight enemies (while winning rewards), completing quests, using items and equipment , earn experience to level up, buying and selling items, & be able to save and load progress
+
+# MY MODULES THAT ARE INCLUDED 
+character_manager.py - handles everything about the player the user creates; creating it, leveling up, checking health, while also saving & loading character data.
+combat_system.py - controls all the battles; enemy creation, player and enemy turns when battling, calculating damage during battle, special abilities, and of course the battle results. 
+inventory_system.py - managing items that the player own; adding/removing items, equiping/unequiping weapons/armor, using consumable items, and buying/selling items. 
+game_data.py - loading game data from files; quest and item data while validating data and creating defaults for files when they are missing. 
+quest_handler.py - handles quests by accepting, completing, and abandoning quests. Checking for prerequisities and tracking rewards and progress.
+main.py - runs the entire game; displays the menu, connects all modules together; Also handling all the saving, loading, exploring, shops, and battles. 
+
+# TESTING
+Using Github to run tests when pushing commits ~
+git commit -m " "
+
+# EXCEPTIONS 
+I used custom exceptions in my game, this helps me keep my game not only stable but easy to debug. Some examples I have implemented, CharacterDeadError, InventoryFullError, QuestNotFoundError, and InvalidDataFormatError. 
+
+# SUMMARY 
+This project shows how a full game can be built by connecting many separate modules. Each file has a purpose to bring the game loop together while bringing all features together in a complete RPG.
+
+# ========================================================
+# ========================================================
+# ========================================================
+
+
+
 # COMP 163: Project 3 - Quest Chronicles
 
 **AI Usage: Free Use (with explanation requirement)**
