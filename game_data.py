@@ -19,7 +19,8 @@ from custom_exceptions import (
 # ============================================================================
 # DATA LOADING FUNCTIONS
 # ============================================================================
-
+# loading game contents from external text files, 
+# mainly quests & items. 
 def load_quests(filename="data/quests.txt"):
     """
     Load quest data from file
